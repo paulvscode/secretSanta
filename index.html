@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/secret-santa-app/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secret Santa Organizer</title>
+    <script type="module" crossorigin src="/secret-santa-app/assets/index-CQqQXfhS.js"></script>
+    <link rel="stylesheet" crossorigin href="/secret-santa-app/assets/index-ByqJSyNO.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Secret Santa Organizer</h1>
+        <p class="subtitle">Organize your holiday gift exchange with ease!</p>
+      </header>
+
+      <main>
+        <form id="participant-form" class="participant-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                type="text"
+                placeholder="Enter name"
+                required
+                class="input"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                placeholder="Enter email"
+                required
+                class="input"
+              />
+            </div>
+            <div class="form-group">
+              <label for="budget">Budget (€)</label>
+              <input
+                id="budget"
+                type="number"
+                min="0"
+                step="5"
+                value="20"
+                class="input"
+              />
+            </div>
+          </div>
+          
+          <div id="form-error" class="error-message"></div>
+          
+          <button type="submit" class="submit-button">Add Participant</button>
+        </form>
+
+        <div id="participant-list" class="participant-list">
+          <h2>Participants</h2>
+          <div id="participants-grid" class="participants-grid">
+            <!-- Participants will be inserted here -->
+          </div>
+          <p id="no-participants" class="no-participants">No participants added yet.</p>
+        </div>
+        
+        <div id="error" class="error-message"></div>
+        
+        <button
+          id="generate-button"
+          class="generate-button"
+          disabled
+        >
+          Generate Secret Santa Assignments
+        </button>
+        
+        <div id="results" class="results hidden">
+          <h2>Secret Santa Assignments</h2>
+          <p class="instructions">
+            Click on a card to reveal who that person needs to give a gift to!
+          </p>
+          <button id="reveal-all-button" class="reveal-all-button">
+            Reveal All Assignments
+          </button>
+          <div id="assignments-grid" class="assignments-grid">
+            <!-- Assignments will be inserted here -->
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>Add at least 3 participants to generate Secret Santa assignments</p>
+      </footer>
+    </div>
+  </body>
+</html>
